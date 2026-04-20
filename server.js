@@ -71,6 +71,7 @@ app.get('/api/areas',(req,res) => {
     res.json({success: true, data: cityAreas});
 });
 
-app.listen(5000, ()=> {
-    console.log('Server is running on http://localhost:5000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
