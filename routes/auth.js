@@ -16,7 +16,6 @@ router.post('/signup', async (req, res) => {
 
         const isEmail = emailOrPhone.includes('@');
 
-        // Phone ke multiple formats check karo
         let existingUser;
         if (isEmail) {
             existingUser = await User.findOne({ email: emailOrPhone });
@@ -53,7 +52,6 @@ router.post('/signup', async (req, res) => {
         await user.save();
 
         if (isEmail) {
-            // Email OTP bhejo
             await sendEmailOtp(emailOrPhone, otp);
             res.status(200).json({ 
                 message: 'OTP sent to your email!',

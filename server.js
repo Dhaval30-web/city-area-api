@@ -17,6 +17,9 @@ app.use('/api/auth', authRoutes);
 const reviewRoutes = require('./routes/review');
 app.use('/api/reviews', reviewRoutes);
 
+const wishlistRoutes = require('./routes/wishlist');
+app.use('/api/wishlist', wishlistRoutes);
+
 const cityAreas = {
     Ahmedabad : [
         {id: 1, name: "Akhabarnagar", pincode: "380081"},
